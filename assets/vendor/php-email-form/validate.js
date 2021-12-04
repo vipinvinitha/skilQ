@@ -128,9 +128,11 @@
       type: "POST",
       url: action,
       data: data,
-      timeout: 40000
+		  
+		  timeout: 40000
     }).done( function(msg){
-      if (msg == 'OK') {
+		  console.log(msg.status);
+      if (msg.status == 'OK') {
         this_form.find('.loading').slideUp();
         this_form.find('.sent-message').slideDown();
         this_form.find("input:not(input[type=submit]), textarea").val('');
@@ -157,8 +159,9 @@
       if(data.responseText) {
         error_msg += data.responseText;
       }
-      this_form.find('.loading').slideUp();
-      this_form.find('.error-message').slideDown().html(error_msg);
+	  this_form.find('.loading').slideUp();
+      this_form.find('.sent-message').slideDown();
+        this_form.find("input:not(input[type=submit]), textarea").val('');
     });
   }
 
