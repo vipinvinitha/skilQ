@@ -1,2 +1,2 @@
-# uviqo
-uviqo home
+# skilQ 
+skilQ home
